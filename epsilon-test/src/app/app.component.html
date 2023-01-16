@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div style="margin:0px 20px">
+    <table style="width: 40%">
+      <thead>
+        <tr class="oddRow">
+          <th #productname>Product Name <img [src]="arrowImage"></th>
+          <th #productprice>Price <img [src]="arrowImage"></th>
+          <th #productcategory>Category <img [src]="arrowImage"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let product of listOfProducts;even as even;">
+          <tr [highlightColor]="'#F0F6FF'" [ngClass]="even ? 'evenRow' : 'oddRow'">
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.category}}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+
+  <br><br><br>
+  <div class="col-md-3" style="margin-left: 40px;">
+    <form>
+      <div class="form-group" style="padding: 24px;">
+        <label for="name" class="formLabel">Name</label>
+        <input class="form-control" id="name" placeholder="Enter Name">
+        <br>
+        <label for="email" class="formLabel">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter Email">
+        <br>
+        <label for="phnumber" class="formLabel">Phone Number</label>
+        <input class="form-control" id="phnumber" placeholder="Enter Phone Number">
+        <br>
+        <label for="password" class="formLabel">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Enter Password">
+        <br>
+        <label for="confirmpassword" class="formLabel">Confirm Password</label>
+        <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm Password">
+        <div style="padding-top:32px;">
+          <button [highlightColor]="'#F0F6FF'" type="submit" class="btn btn-primary" style="width:100%">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <br><br>
+
+  <div class="card">
+    <img src="/assets/images/dog.jpg" alt="Avatar" style="width:290px;height:290px">
+    <div class="container">
+      <p class="container-firstline">Beach Day</p>
+      <p class="container-secondline">RUFUS THE DOG</p>
+      <p class="container-thirdline">Modified 01/16/2023 by abc</p>
+    </div>
+  </div>
+
+  <br>
+  <hr>
+</body>
+
+</html>
